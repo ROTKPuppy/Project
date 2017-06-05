@@ -98,6 +98,6 @@ extension BaseTabBarController {
 
     func setupCustomUI() -> () {
         
-        
+        tabBar.tintColor = UIColor.red
     }
 }

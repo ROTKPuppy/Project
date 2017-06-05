@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+///配置主窗口
 extension AppDelegate {
     
     func setupKeyWindow() {

@@ -8,6 +8,7 @@ target 'Project' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'YYKit'
+  pod 'SlideMenuControllerSwift'
 
   # Pods for Project
 
