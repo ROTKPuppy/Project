@@ -33,3 +33,16 @@ class BaseNavigationController: UINavigationController {
     */
 
 }
+
+///配置样式
+extension BaseNavigationController {
+    
+    func setupParameter(_ titleKeyString: String,
+                        imageFilePath: String,
+                        iconImageNamed: String) -> () {
+        
+        tabBarItem.title = StringUtail.String(titleKeyString)
+        tabBarItem.image = ImageUtail.BundleImagesArray(imageFilePath, imageNamed: iconImageNamed).first
+        tabBarItem.selectedImage = ImageUtail.BundleImagesArray(imageFilePath, imageNamed: iconImageNamed).last
+    }
+}

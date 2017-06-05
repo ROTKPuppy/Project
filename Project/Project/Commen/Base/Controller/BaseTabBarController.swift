@@ -13,6 +13,8 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addAllChildViewController()
+        setupCustomUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,23 +38,66 @@ extension BaseTabBarController {
     
     func addAllChildViewController() {
         
-        let bundle = Bundle()
-        if let bundlePath = bundle.path(forResource: "Modules.plist", ofType: nil) {
-            let bundlePathURL = URL(fileURLWithPath: bundlePath)
-            do {
-                let modulesData = try Data(contentsOf: bundlePathURL)
-                let modulesDict = NSKeyedUnarchiver.unarchiveObject(with: modulesData)! as! NSDictionary
-                for module in modulesDict.value(forKey: "ChildViewControllersArray")! as! NSArray {
-                    
-                }
-                
-            } catch {
-                print(error.localizedDescription)
-            }
+        ///数据数组
+        let modules = [["title":"首页",
+                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageNamed":"tabBar_home",
+                        "viewController":"BaseViewController"],
+                       ["title":"Finder",
+                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageNamed":"tabBar_finder",
+                        "viewController":"BaseViewController"],
+                       ["title":"",
+                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageNamed":"tabBar_output",
+                        "viewController":"BaseViewController"],
+                       ["title":"消息",
+                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageNamed":"tabBar_message",
+                        "viewController":"BaseViewController"],
+                       ["title":"我的",
+                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageNamed":"tabBar_mine",
+                        "viewController":"BaseViewController"]]
+        
+        ///遍历添加控制器
+        for module in modules {
+            addChildViewController(module["title"]!,
+                                   imageFilePath: module["imageFilePath"]!,
+                                   iconNamed: module["imageNamed"]!,
+                                   viewControllerName: module["viewController"]!)
         }
     }
     
-    func addChildViewController(_ childController: UIViewController, iconNamed: String) {
+    ///添加单个控制器
+    func addChildViewController(_ titleKeyString: String,
+                                imageFilePath: String,
+                                iconNamed: String,
+                                viewControllerName: String) {
+        
+        ///初始化控制器
+        if let ViewControllerClass = NSClassFromString(viewControllerName) as? UIViewController.Type {
+            let viewController = ViewControllerClass.init()
+            
+            ///嵌入导航控制器
+            let navigationController = BaseNavigationController(rootViewController: viewController)
+            
+            ///配置样式
+            navigationController.setupParameter(titleKeyString,
+                                                imageFilePath: imageFilePath,
+                                                iconImageNamed: iconNamed)
+            
+            ///加入到根控制器
+            addChildViewController(navigationController)
+        }
+    }
+}
+
+///自定义样式配置
+extension BaseTabBarController {
+
+    func setupCustomUI() -> () {
+        
         
     }
 }

@@ -1,15 +1,20 @@
 PODS:
   - Alamofire (4.4.0)
   - SnapKit (3.2.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - Alamofire
   - SnapKit
+  - YYKit
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 993f6573383a5b8c552f329f63a76e5a081bda69
+PODFILE CHECKSUM: 5eb6142077fdb639e45a02b33fe9933c37408a61
 
 COCOAPODS: 1.0.1
