@@ -8,21 +8,22 @@
 
 import UIKit
 import SceneKit
+import SnapKit
 
 @objc (BaseViewController)
 class BaseViewController: UIViewController {
     
     private lazy var scnView: SCNView = {
-        return SCNView.init(frame: CGRect(x: 0, y: 100, width: ProjectConfigurationConst.SCREEN_WIDTH, height: 280))
+        return SCNView.init()
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = ColorUtail.utail.color1
+        
+        view.backgroundColor = ColorUtail.utail.color2
         
         // create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
         
         // create and add a camera to the scene
         let cameraNode = SCNNode()
@@ -47,13 +48,43 @@ class BaseViewController: UIViewController {
         scene.rootNode.addChildNode(ambientLightNode)
         
         // retrieve the ship node
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        //let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        ///添加圆柱体
+        let cylinder = SCNCylinder(radius:1,height:3)
+        let node = SCNNode(geometry: cylinder)
+        cylinder.firstMaterial?.diffuse.contents = ColorUtail.utail.color8
+        scnView.autoenablesDefaultLighting = true
+        scene.rootNode.addChildNode(node)
+        
+        ///圆柱体添加椎体
+        for i in 1...3 {
+            let cone = SCNNode(geometry: SCNCone(topRadius: 0, bottomRadius: 3, height: 3))
+            cone.position.y = 2 * Float(i) + 1
+            cone.geometry?.firstMaterial?.diffuse.contents = ColorUtail.utail.color9
+            node.addChildNode(cone)
+        }
+        
+        ///添加正方体
+        for i in 1...3 {
+            
+            let present = SCNNode(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
+            present.geometry?.firstMaterial?.diffuse.contents = ColorUtail.utail.color10
+            present.position.x = Float(i % 2) * 2
+            present.position.z = Float(i / 2) * 2
+            present.position.y = -1
+            node.addChildNode(present)
+        }
         
         // animate the 3d object
-        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        //ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
         
         // retrieve the SCNView
         view.addSubview(scnView)
+        scnView.snp.makeConstraints { (ConstraintMaker) in
+            ConstraintMaker.bottom.equalToSuperview()
+            ConstraintMaker.top.equalToSuperview().offset(64)
+            ConstraintMaker.left.right.equalToSuperview()
+        }
         
         // set the scene to the view
         scnView.scene = scene
