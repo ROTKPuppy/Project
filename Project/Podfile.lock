@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - FoldingCell (2.1.3)
   - SnapKit (3.2.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -7,14 +8,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FoldingCell
   - SnapKit
   - YYKit
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  FoldingCell: f3073f8b24cf20866a35198f31e3b67aea64e96e
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 5eb6142077fdb639e45a02b33fe9933c37408a61
+PODFILE CHECKSUM: a208f24c3abf3b17d299e950916992ac55bb2b12
 
 COCOAPODS: 1.0.1

@@ -7,6 +7,9 @@ target 'Project' do
 
   pod 'Alamofire'
   pod 'SnapKit'
+  pod 'FoldingCell'
+
+  #-------------OC库-------------
   pod 'YYKit'
 
   # Pods for Project

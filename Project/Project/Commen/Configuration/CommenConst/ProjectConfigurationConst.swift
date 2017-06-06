@@ -41,3 +41,13 @@ extension ProjectConfigurationConst {
     ///TabBar
     static let RESOURCES_DEFAULT_IMAGE_TABBAR: String = "TabBar"
 }
+
+///系统尺寸
+extension ProjectConfigurationConst {
+    
+    ///屏幕宽
+    static let SCREEN_WIDTH: CGFloat = UIScreen.main.bounds.size.width
+    
+    ///屏幕高
+    static let SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
+}

@@ -11,16 +11,19 @@ import UIKit
 @objc (BaseViewController)
 class BaseViewController: UIViewController {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.navigationController?.pushViewController(BaseViewController(), animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = ColorUtail.utail.color1
         
-        let button = BaseButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        view.addSubview(button)
-        button.setTitle(StringUtail.String("PUBLIC_CANCEL_STRINGKEY"), for: .normal)
-        button.setTitleColor(ColorUtail.utail.color2, for: .normal)
-        button.backgroundColor = ColorUtail.utail.color6
+        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        label.backgroundColor = ColorUtail.utail.color10
+        label.text = StringUtail.String("PUBLIC_CANCEL_STRINGKEY")
+        view.addSubview(label)
     }
 
     override func didReceiveMemoryWarning() {

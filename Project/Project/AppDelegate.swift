@@ -52,6 +52,7 @@ extension AppDelegate {
     
     func setupKeyWindow() {
         
+        window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.rootViewController = BaseSlideMenuController.init()
         window?.makeKeyAndVisible()
     }
