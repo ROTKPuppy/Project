@@ -10,7 +10,7 @@ import UIKit
 
 struct ProjectConfigurationConst {
     
-    ///项目默认颜色及图片资源文件文件夹
+    ///项目默认图片资源文件文件夹
     static let RESOURCES_DEFAULT: String = "Default"
     
     ///项目图片资源存放bundle

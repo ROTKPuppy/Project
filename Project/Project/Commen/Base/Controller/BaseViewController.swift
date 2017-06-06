@@ -20,6 +20,7 @@ class BaseViewController: UIViewController {
         view.addSubview(button)
         button.setTitle(StringUtail.String("PUBLIC_CANCEL_STRINGKEY"), for: .normal)
         button.setTitleColor(ColorUtail.utail.color2, for: .normal)
+        button.backgroundColor = ColorUtail.utail.color6
     }
 
     override func didReceiveMemoryWarning() {
