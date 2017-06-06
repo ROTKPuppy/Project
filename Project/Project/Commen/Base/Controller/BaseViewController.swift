@@ -15,6 +15,11 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = ColorUtail.utail.color1
+        
+        let button = BaseButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        view.addSubview(button)
+        button.setTitle(StringUtail.String("PUBLIC_CANCEL_STRINGKEY"), for: .normal)
+        button.setTitleColor(ColorUtail.utail.color2, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

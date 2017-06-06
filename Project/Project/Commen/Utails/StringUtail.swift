@@ -12,6 +12,6 @@ struct StringUtail {
     
     ///处理文字国际化方法
     static func String(_ stringKey: String) -> String {
-        return stringKey
+        return NSLocalizedString(stringKey, comment: "")
     }
 }

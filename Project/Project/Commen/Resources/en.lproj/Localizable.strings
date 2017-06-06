@@ -1,4 +1,11 @@
-"PUBLIC_CANCEL_STRINGKEY" = "取消";
+/* 
+  Localizable.strings
+  Project
+
+  Created by 郑键 on 17/6/6.
+  Copyright © 2017年 inborn. All rights reserved.
+*/
+"PUBLIC_CANCEL_STRINGKEY" = "cancel";
 "PUBLIC_NEXT_STRINGKEY" = "下一步";
 "TABBAR_HOMEPAGE_TITLE_STRINGKEY" = "首页";
 "TABBAR_FINDER_TITLE_STRINGKEY" = "晒物";
