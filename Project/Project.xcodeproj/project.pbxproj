@@ -39,7 +39,6 @@
 		12FE3A9C1EE64C85003C391B /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE3A9B1EE64C85003C391B /* SlideMenuController.swift */; };
 		12FE3AAA1EE65AA8003C391B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12FE3AAC1EE65AA8003C391B /* InfoPlist.strings */; };
 		12FE3AB11EE65CAC003C391B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12FE3AB31EE65CAC003C391B /* Localizable.strings */; };
-		12FE3AB71EE690ED003C391B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 12FE3AB61EE690ED003C391B /* art.scnassets */; };
 		5D8ED91374AE3FECE1B91D9A /* Pods_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B915A99D80490ED1753BFD09 /* Pods_ProjectTests.framework */; };
 		ACA7CF47D9894FBCC7C38AB3 /* Pods_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1762810C1B4C63F45CEE60B /* Pods_Project.framework */; };
 		B7659AEDD7C0C794CE0273EE /* Pods_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC4B90091388C2D464D5BB8 /* Pods_ProjectUITests.framework */; };
@@ -109,7 +108,6 @@
 		12FE3AB21EE65CAC003C391B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12FE3AB41EE65CAD003C391B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		12FE3AB51EE65CAF003C391B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		12FE3AB61EE690ED003C391B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		3ECDCB2BBD9F8F770978ECDC /* Pods-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C418DB45CA5AB580BCCB8FA /* Pods-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B915A99D80490ED1753BFD09 /* Pods_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,7 +278,6 @@
 		124A53FF1EE14CFA00BE7E89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				12FE3AB61EE690ED003C391B /* art.scnassets */,
 				124A54291EE16BDD00BE7E89 /* Image.bundle */,
 				12FE3AAC1EE65AA8003C391B /* InfoPlist.strings */,
 				12FE3AB31EE65CAC003C391B /* Localizable.strings */,
@@ -510,7 +507,6 @@
 			files = (
 				12FE3AAA1EE65AA8003C391B /* InfoPlist.strings in Resources */,
 				124A53D01EE14C3600BE7E89 /* Assets.xcassets in Resources */,
-				12FE3AB71EE690ED003C391B /* art.scnassets in Resources */,
 				124A542C1EE16BDD00BE7E89 /* Image.bundle in Resources */,
 				12FE3AB11EE65CAC003C391B /* Localizable.strings in Resources */,
 			);
