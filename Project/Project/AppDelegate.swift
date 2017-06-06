@@ -52,7 +52,7 @@ extension AppDelegate {
     
     func setupKeyWindow() {
         
-        window?.rootViewController = BaseTabBarController()
+        window?.rootViewController = BaseSlideMenuController.init()
         window?.makeKeyAndVisible()
     }
 }
