@@ -52,6 +52,7 @@ class BaseViewController: UIViewController {
         ///添加圆柱体
         let cylinder = SCNCylinder(radius:1,height:3)
         let node = SCNNode(geometry: cylinder)
+        node.name = "tree"
         cylinder.firstMaterial?.diffuse.contents = ColorUtail.utail.color8
         scnView.autoenablesDefaultLighting = true
         scene.rootNode.addChildNode(node)
@@ -76,7 +77,8 @@ class BaseViewController: UIViewController {
         }
         
         // animate the 3d object
-        //ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        let ship = scene.rootNode.childNode(withName: "tree", recursively: true)!
+        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
         
         // retrieve the SCNView
         view.addSubview(scnView)
@@ -93,7 +95,7 @@ class BaseViewController: UIViewController {
         scnView.allowsCameraControl = true
         
         // show statistics such as fps and timing information
-        //scnView.showsStatistics = true
+        scnView.showsStatistics = true
         
         // configure the view
         scnView.backgroundColor = UIColor.yellow
