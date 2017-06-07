@@ -13,7 +13,7 @@ struct ImageUtail {
     ///加载Bundle图片
     static func bundleImage(_ imageFilePath: String, imageNamed: String) -> UIImage {
         
-        if let imagePathString = Bundle.main.resourcePath?.appending("/" + ProjectConfigurationConst.RESOURCES_BUNDLE_IMAGE + "/" + ProjectConfigurationConst.RESOURCES_DEFAULT + "/" + imageFilePath + "/" + imageNamed) {
+        if let imagePathString = Bundle.main.resourcePath?.appending("/" + RESOURCES_BUNDLE_IMAGE + "/" + RESOURCES_DEFAULT + "/" + imageFilePath + "/" + imageNamed) {
             return UIImage(named: imagePathString)!
         }
         
@@ -25,10 +25,10 @@ struct ImageUtail {
     ///下标1为hig图片
     static func bundleImagesArray(_ imageFilePath: String, imageNamed: String) -> Array<UIImage> {
         
-        if let imagePathString = Bundle.main.resourcePath?.appending("/" + ProjectConfigurationConst.RESOURCES_BUNDLE_IMAGE + "/" + ProjectConfigurationConst.RESOURCES_DEFAULT + "/" + imageFilePath) {
+        if let imagePathString = Bundle.main.resourcePath?.appending("/" + RESOURCES_BUNDLE_IMAGE + "/" + RESOURCES_DEFAULT + "/" + imageFilePath) {
             
-            var norImage = UIImage(named: imagePathString.appending("/" + imageNamed + ProjectConfigurationConst.IMAGE_SUFFIX_NOR))!
-            var higImage = UIImage(named: imagePathString.appending("/" + imageNamed + ProjectConfigurationConst.IMAGE_SUFFIX_HIG))!
+            var norImage = UIImage(named: imagePathString.appending("/" + imageNamed + IMAGE_SUFFIX_NOR))!
+            var higImage = UIImage(named: imagePathString.appending("/" + imageNamed + IMAGE_SUFFIX_HIG))!
             
             norImage = norImage.withRenderingMode(.alwaysOriginal)
             higImage = higImage.withRenderingMode(.alwaysOriginal)
@@ -47,11 +47,11 @@ struct ImageUtail {
     ///下标2为hig图片
     static func bundleImagesArrayDis(_ imageFilePath: String, imageNamed: String) -> Array<UIImage> {
         
-        if let imagePathString = Bundle.main.resourcePath?.appending("/" + ProjectConfigurationConst.RESOURCES_BUNDLE_IMAGE +  "/" + ProjectConfigurationConst.RESOURCES_DEFAULT + "/" + imageFilePath) {
+        if let imagePathString = Bundle.main.resourcePath?.appending("/" + RESOURCES_BUNDLE_IMAGE +  "/" + RESOURCES_DEFAULT + "/" + imageFilePath) {
             
-            var norImage = UIImage(named: imagePathString.appending("/" + imageNamed + ProjectConfigurationConst.IMAGE_SUFFIX_NOR))!
-            var disImage = UIImage(named: imagePathString.appending("/" + imageNamed + ProjectConfigurationConst.IMAGE_SUFFIX_DIS))!
-            var higImage = UIImage(named: imagePathString.appending("/" + imageNamed + ProjectConfigurationConst.IMAGE_SUFFIX_HIG))!
+            var norImage = UIImage(named: imagePathString.appending("/" + imageNamed + IMAGE_SUFFIX_NOR))!
+            var disImage = UIImage(named: imagePathString.appending("/" + imageNamed + IMAGE_SUFFIX_DIS))!
+            var higImage = UIImage(named: imagePathString.appending("/" + imageNamed + IMAGE_SUFFIX_HIG))!
             
             norImage = norImage.withRenderingMode(.alwaysOriginal)
             higImage = higImage.withRenderingMode(.alwaysOriginal)

@@ -40,23 +40,23 @@ extension BaseTabBarController {
         
         ///数据数组
         let modules = [["title":"首页",
-                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageFilePath":RESOURCES_DEFAULT_IMAGE_TABBAR,
                         "imageNamed":"tabBar_home",
                         "viewController":"BaseViewController"],
                        ["title":"Finder",
-                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageFilePath":RESOURCES_DEFAULT_IMAGE_TABBAR,
                         "imageNamed":"tabBar_finder",
                         "viewController":"BaseViewController"],
                        ["title":"",
-                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageFilePath":RESOURCES_DEFAULT_IMAGE_TABBAR,
                         "imageNamed":"tabBar_output",
                         "viewController":"BaseViewController"],
                        ["title":"消息",
-                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageFilePath":RESOURCES_DEFAULT_IMAGE_TABBAR,
                         "imageNamed":"tabBar_message",
                         "viewController":"BaseViewController"],
                        ["title":"我的",
-                        "imageFilePath":ProjectConfigurationConst.RESOURCES_DEFAULT_IMAGE_TABBAR,
+                        "imageFilePath":RESOURCES_DEFAULT_IMAGE_TABBAR,
                         "imageNamed":"tabBar_mine",
                         "viewController":"BaseViewController"]]
         

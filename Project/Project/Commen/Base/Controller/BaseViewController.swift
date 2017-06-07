@@ -11,11 +11,16 @@ import UIKit
 @objc (BaseViewController)
 class BaseViewController: UIViewController {
     
+    /// 配置界面
+    func setupCustomUI() -> () {
+        
+        dprint(message: "123")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = ColorUtail.utail.color2
-        
+        view.backgroundColor = ColorUtail.utail.color1
     }
     
     override func didReceiveMemoryWarning() {

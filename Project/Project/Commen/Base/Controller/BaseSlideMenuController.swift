@@ -20,7 +20,7 @@ class BaseSlideMenuController: SlideMenuController {
         ///子类可重载当前方法，进行不同的配置
         
         ///主控制器
-        let mainViewController = BaseTabBarController()
+        let mainViewController = BaseNavigationController(rootViewController: HomePageViewController())
         
         ///左侧控制器
         let leftViewController = UIViewController()

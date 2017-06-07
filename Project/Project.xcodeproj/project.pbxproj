@@ -35,6 +35,7 @@
 		124A54351EE4FB0100BE7E89 /* ImageUtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A54341EE4FB0100BE7E89 /* ImageUtail.swift */; };
 		124A54371EE4FD2500BE7E89 /* ProjectConfigurationConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A54361EE4FD2500BE7E89 /* ProjectConfigurationConst.swift */; };
 		124A54391EE5282400BE7E89 /* ColorUtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A54381EE5282400BE7E89 /* ColorUtail.swift */; };
+		12D3A8381EE7A8AB0099E5A1 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3A8371EE7A8AB0099E5A1 /* HomePageViewController.swift */; };
 		12FE3A8B1EE54CC3003C391B /* BaseSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE3A8A1EE54CC3003C391B /* BaseSlideMenuController.swift */; };
 		12FE3A9C1EE64C85003C391B /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE3A9B1EE64C85003C391B /* SlideMenuController.swift */; };
 		12FE3AAA1EE65AA8003C391B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12FE3AAC1EE65AA8003C391B /* InfoPlist.strings */; };
@@ -101,6 +102,7 @@
 		124A54341EE4FB0100BE7E89 /* ImageUtail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtail.swift; sourceTree = "<group>"; };
 		124A54361EE4FD2500BE7E89 /* ProjectConfigurationConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConfigurationConst.swift; sourceTree = "<group>"; };
 		124A54381EE5282400BE7E89 /* ColorUtail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtail.swift; sourceTree = "<group>"; };
+		12D3A8371EE7A8AB0099E5A1 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		12FE3A841EE540DD003C391B /* Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-Bridging-Header.h"; sourceTree = "<group>"; };
 		12FE3A8A1EE54CC3003C391B /* BaseSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSlideMenuController.swift; sourceTree = "<group>"; };
 		12FE3A9B1EE64C85003C391B /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		124A53C71EE14C3600BE7E89 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				12D3A8311EE7A8800099E5A1 /* Module */,
 				124A53F61EE14CFA00BE7E89 /* Commen */,
 				124A53C81EE14C3600BE7E89 /* AppDelegate.swift */,
 				124A53CA1EE14C3600BE7E89 /* ViewController.swift */,
@@ -355,6 +358,54 @@
 			children = (
 			);
 			path = NetworkConst;
+			sourceTree = "<group>";
+		};
+		12D3A8311EE7A8800099E5A1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				12D3A8321EE7A8800099E5A1 /* HomePage */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		12D3A8321EE7A8800099E5A1 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				12D3A8331EE7A8800099E5A1 /* Controller */,
+				12D3A8341EE7A8800099E5A1 /* Model */,
+				12D3A8351EE7A8800099E5A1 /* View */,
+				12D3A8361EE7A8800099E5A1 /* ViewModel */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		12D3A8331EE7A8800099E5A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12D3A8371EE7A8AB0099E5A1 /* HomePageViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		12D3A8341EE7A8800099E5A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12D3A8351EE7A8800099E5A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12D3A8361EE7A8800099E5A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		12FE3A9A1EE64C81003C391B /* Slider */ = {
@@ -678,6 +729,7 @@
 				124A54271EE15B3E00BE7E89 /* BaseWebViewController.swift in Sources */,
 				124A54231EE15AB000BE7E89 /* BaseCollectionViewController.swift in Sources */,
 				124A54111EE159EF00BE7E89 /* BaseCollectionView.swift in Sources */,
+				12D3A8381EE7A8AB0099E5A1 /* HomePageViewController.swift in Sources */,
 				BB31E6131EE79AEA00524C50 /* FontUtail.swift in Sources */,
 				124A54151EE15A1E00BE7E89 /* BaseSegmentedControl.swift in Sources */,
 				12FE3A9C1EE64C85003C391B /* SlideMenuController.swift in Sources */,
