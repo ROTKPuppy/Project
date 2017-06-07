@@ -35,6 +35,7 @@
 		124A54351EE4FB0100BE7E89 /* ImageUtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A54341EE4FB0100BE7E89 /* ImageUtail.swift */; };
 		124A54371EE4FD2500BE7E89 /* ProjectConfigurationConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A54361EE4FD2500BE7E89 /* ProjectConfigurationConst.swift */; };
 		124A54391EE5282400BE7E89 /* ColorUtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A54381EE5282400BE7E89 /* ColorUtail.swift */; };
+		12B550C11EE7D1D3003B254F /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B550C01EE7D1D3003B254F /* AnimatedView.swift */; };
 		12D3A8381EE7A8AB0099E5A1 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3A8371EE7A8AB0099E5A1 /* HomePageViewController.swift */; };
 		12FE3A8B1EE54CC3003C391B /* BaseSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE3A8A1EE54CC3003C391B /* BaseSlideMenuController.swift */; };
 		12FE3A9C1EE64C85003C391B /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE3A9B1EE64C85003C391B /* SlideMenuController.swift */; };
@@ -102,6 +103,7 @@
 		124A54341EE4FB0100BE7E89 /* ImageUtail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtail.swift; sourceTree = "<group>"; };
 		124A54361EE4FD2500BE7E89 /* ProjectConfigurationConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectConfigurationConst.swift; sourceTree = "<group>"; };
 		124A54381EE5282400BE7E89 /* ColorUtail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtail.swift; sourceTree = "<group>"; };
+		12B550C01EE7D1D3003B254F /* AnimatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
 		12D3A8371EE7A8AB0099E5A1 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		12FE3A841EE540DD003C391B /* Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-Bridging-Header.h"; sourceTree = "<group>"; };
 		12FE3A8A1EE54CC3003C391B /* BaseSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSlideMenuController.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		12D3A8351EE7A8800099E5A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12B550C01EE7D1D3003B254F /* AnimatedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				124A541B1EE15A6400BE7E89 /* BaseCollectionReusableView.swift in Sources */,
 				124A54211EE15AA400BE7E89 /* BaseTableViewController.swift in Sources */,
 				124A53CB1EE14C3600BE7E89 /* ViewController.swift in Sources */,
+				12B550C11EE7D1D3003B254F /* AnimatedView.swift in Sources */,
 				124A54251EE15AC600BE7E89 /* BaseNavigationController.swift in Sources */,
 				124A540D1EE159CF00BE7E89 /* BaseTextView.swift in Sources */,
 				BB31E6111EE799FF00524C50 /* SizeUtail.swift in Sources */,

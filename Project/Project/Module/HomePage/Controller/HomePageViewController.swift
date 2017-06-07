@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomePageViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
+    lazy var testView: AnimatedView = {
+        let testView = AnimatedView()
+        testView.backgroundColor = UIColor.white
+        return testView
+    }()
+    
     lazy var tableView: BaseTableView = {
         
         let tableView = BaseTableView(frame: self.view.bounds, style: UITableViewStyle.plain)
@@ -18,6 +25,26 @@ class HomePageViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         return tableView
     }()
+    
+    lazy var timerLink: CADisplayLink = {
+        let dpLink = CADisplayLink(target: self, selector: #selector(HomePageViewController.update))
+        dpLink.frameInterval = 1
+        dpLink.isPaused = true
+        dpLink.add(to: RunLoop.current, forMode: .commonModes)
+        return dpLink
+    }()
+    
+    func update(){
+        
+    }
+    
+    func startDpLink(){
+        self.timerLink.isPaused = false
+    }
+    
+    func stopDpLink(){
+        self.timerLink.invalidate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +57,36 @@ class HomePageViewController: BaseViewController, UITableViewDelegate, UITableVi
         
     }
     
-    //MARK: - Super func
+    //MARK: - Super Func
     override func setupCustomUI() {
         super.setupCustomUI()
         
-        view.addSubview(tableView)
+        //view.addSubview(tableView)
+        
+        ///测试代码
+        
+        view.addSubview(testView)
+        testView.snp.makeConstraints { (ConstraintMaker) in
+            ConstraintMaker.centerX.centerY.equalToSuperview()
+            ConstraintMaker.width.height.equalTo(SizeUtail.adjustFloat(float: 100))
+        }
+        ///测试代码
+        
+        ///旋转动画
+        rorateAnimation(holdView: testView)
+        
+        //startDpLink()
     }
 
+    func rorateAnimation(holdView: UIView){
+        
+        let momAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        momAnimation.fromValue = NSNumber(value: 0)
+        momAnimation.toValue = NSNumber(value: M_PI*2)
+        momAnimation.duration = 10
+        momAnimation.repeatCount = HUGE
+        holdView.layer.add(momAnimation, forKey: "centerLayer")
+    }
     
     //MARK: - UITableViewDataSource
     
