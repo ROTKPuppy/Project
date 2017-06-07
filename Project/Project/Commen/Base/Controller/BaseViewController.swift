@@ -49,6 +49,7 @@ class BaseViewController: UIViewController {
         
         // retrieve the ship node
         //let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+        
         ///添加圆柱体
         let cylinder = SCNCylinder(radius:1,height:3)
         let node = SCNNode(geometry: cylinder)
@@ -78,7 +79,7 @@ class BaseViewController: UIViewController {
         
         // animate the 3d object
         let ship = scene.rootNode.childNode(withName: "tree", recursively: true)!
-        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 1, z: 0, duration: 1)))
         
         // retrieve the SCNView
         view.addSubview(scnView)
