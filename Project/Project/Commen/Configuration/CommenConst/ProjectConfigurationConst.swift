@@ -50,4 +50,7 @@ extension ProjectConfigurationConst {
     
     ///屏幕高
     static let SCREEN_HEIGHT:CGFloat = UIScreen.main.bounds.size.height
+    
+    ///屏幕单点像素
+    static let SCREEN_SCALE:CGFloat = UIScreen.main.scale
 }
