@@ -11,7 +11,7 @@ import UIKit
 struct ImageUtail {
     
     ///加载Bundle图片
-    static func BundleImage(_ imageFilePath: String, imageNamed: String) -> UIImage {
+    static func bundleImage(_ imageFilePath: String, imageNamed: String) -> UIImage {
         
         if let imagePathString = Bundle.main.resourcePath?.appending("/" + ProjectConfigurationConst.RESOURCES_BUNDLE_IMAGE + "/" + ProjectConfigurationConst.RESOURCES_DEFAULT + "/" + imageFilePath + "/" + imageNamed) {
             return UIImage(named: imagePathString)!
@@ -23,7 +23,7 @@ struct ImageUtail {
     ///加载Bundle图片数组不含禁用状态图片
     ///下标0为nor图片
     ///下标1为hig图片
-    static func BundleImagesArray(_ imageFilePath: String, imageNamed: String) -> Array<UIImage> {
+    static func bundleImagesArray(_ imageFilePath: String, imageNamed: String) -> Array<UIImage> {
         
         if let imagePathString = Bundle.main.resourcePath?.appending("/" + ProjectConfigurationConst.RESOURCES_BUNDLE_IMAGE + "/" + ProjectConfigurationConst.RESOURCES_DEFAULT + "/" + imageFilePath) {
             
@@ -45,7 +45,7 @@ struct ImageUtail {
     ///下标0为nor图片
     ///下标1为dis图片
     ///下标2为hig图片
-    static func BundleImagesArrayDis(_ imageFilePath: String, imageNamed: String) -> Array<UIImage> {
+    static func bundleImagesArrayDis(_ imageFilePath: String, imageNamed: String) -> Array<UIImage> {
         
         if let imagePathString = Bundle.main.resourcePath?.appending("/" + ProjectConfigurationConst.RESOURCES_BUNDLE_IMAGE +  "/" + ProjectConfigurationConst.RESOURCES_DEFAULT + "/" + imageFilePath) {
             

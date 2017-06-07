@@ -42,7 +42,7 @@ extension BaseNavigationController {
                         iconImageNamed: String) -> () {
         
         tabBarItem.title = StringUtail.String(titleKeyString)
-        tabBarItem.image = ImageUtail.BundleImagesArray(imageFilePath, imageNamed: iconImageNamed).first
-        tabBarItem.selectedImage = ImageUtail.BundleImagesArray(imageFilePath, imageNamed: iconImageNamed).last
+        tabBarItem.image = ImageUtail.bundleImagesArray(imageFilePath, imageNamed: iconImageNamed).first
+        tabBarItem.selectedImage = ImageUtail.bundleImagesArray(imageFilePath, imageNamed: iconImageNamed).last
     }
 }
