@@ -8,25 +8,21 @@
 
 import UIKit
 
-class HomePageViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class HomePageViewController: BaseViewController {
     
     //MARK: - Properties
-    lazy var tableView: BaseTableView = {
-        
-        let tableView = BaseTableView(frame: self.view.bounds, style: UITableViewStyle.plain)
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        return tableView
+    
+    lazy var modules: Array = { () -> [Any] in
+        let modeules = [1, 2, 3]
+        return modeules
     }()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupCustomUI()
         setupDefaultNavigationBar()
-        registerSubViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,35 +45,11 @@ class HomePageViewController: BaseViewController, UITableViewDelegate, UITableVi
     override func setupCustomUI() {
         super.setupCustomUI()
         
-        view.addSubview(tableView)
+        view.backgroundColor = UIColor.red
     }
     
     override func setupDefaultNavigationBar() {
         super.setupDefaultNavigationBar()
         
-    }
-    
-    //MARK: - UITableViewDataSource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: kHomePageModuleCellReuseIdentify,
-                                                 for: indexPath)
-        return cell
-    }
-    
-    //MARK: - Other
-    
-    func registerSubViews() -> () {
-        tableView.register(HomePageModuleCell.classForCoder(),
-                           forCellReuseIdentifier: kHomePageModuleCellReuseIdentify)
     }
 }

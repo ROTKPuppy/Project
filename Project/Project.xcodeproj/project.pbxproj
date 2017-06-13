@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		122B38901EEFCD76006D9716 /* HomePageModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B388F1EEFCD76006D9716 /* HomePageModuleCell.swift */; };
+		122B38921EEFD963006D9716 /* HomePageModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B38911EEFD963006D9716 /* HomePageModuleView.swift */; };
 		124A53C91EE14C3600BE7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A53C81EE14C3600BE7E89 /* AppDelegate.swift */; };
 		124A53CB1EE14C3600BE7E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A53CA1EE14C3600BE7E89 /* ViewController.swift */; };
 		124A53D01EE14C3600BE7E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124A53CF1EE14C3600BE7E89 /* Assets.xcassets */; };
@@ -69,7 +69,7 @@
 		01DC7419B1457AFE0B39FCE4 /* Pods-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0BC4B90091388C2D464D5BB8 /* Pods_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		117F6EA936926D9A6359EC66 /* Pods-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		122B388F1EEFCD76006D9716 /* HomePageModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageModuleCell.swift; sourceTree = "<group>"; };
+		122B38911EEFD963006D9716 /* HomePageModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageModuleView.swift; sourceTree = "<group>"; };
 		124A53C51EE14C3600BE7E89 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		124A53C81EE14C3600BE7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		124A53CA1EE14C3600BE7E89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -399,7 +399,7 @@
 		12D3A8351EE7A8800099E5A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				122B388F1EEFCD76006D9716 /* HomePageModuleCell.swift */,
+				122B38911EEFD963006D9716 /* HomePageModuleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -737,7 +737,6 @@
 				12FE3A8B1EE54CC3003C391B /* BaseSlideMenuController.swift in Sources */,
 				124A541D1EE15A9000BE7E89 /* BaseTabBarController.swift in Sources */,
 				124A541B1EE15A6400BE7E89 /* BaseCollectionReusableView.swift in Sources */,
-				122B38901EEFCD76006D9716 /* HomePageModuleCell.swift in Sources */,
 				124A54211EE15AA400BE7E89 /* BaseTableViewController.swift in Sources */,
 				124A53CB1EE14C3600BE7E89 /* ViewController.swift in Sources */,
 				124A54251EE15AC600BE7E89 /* BaseNavigationController.swift in Sources */,
@@ -757,6 +756,7 @@
 				124A54091EE159A200BE7E89 /* BaseImageView.swift in Sources */,
 				124A54331EE4F9FC00BE7E89 /* StringUtail.swift in Sources */,
 				124A54071EE1598800BE7E89 /* BaseButton.swift in Sources */,
+				122B38921EEFD963006D9716 /* HomePageModuleView.swift in Sources */,
 				124A54351EE4FB0100BE7E89 /* ImageUtail.swift in Sources */,
 				124A53C91EE14C3600BE7E89 /* AppDelegate.swift in Sources */,
 				124A541F1EE15A9B00BE7E89 /* BaseViewController.swift in Sources */,
