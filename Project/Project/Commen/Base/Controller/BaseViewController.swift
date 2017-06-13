@@ -17,6 +17,11 @@ class BaseViewController: UIViewController {
         dprint(message: "123")
     }
     
+    /// 配置默认NavigationBar
+    func setupDefaultNavigationBar () -> () {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

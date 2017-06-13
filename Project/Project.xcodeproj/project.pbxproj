@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122B38901EEFCD76006D9716 /* HomePageModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122B388F1EEFCD76006D9716 /* HomePageModuleCell.swift */; };
 		124A53C91EE14C3600BE7E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A53C81EE14C3600BE7E89 /* AppDelegate.swift */; };
 		124A53CB1EE14C3600BE7E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A53CA1EE14C3600BE7E89 /* ViewController.swift */; };
 		124A53D01EE14C3600BE7E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124A53CF1EE14C3600BE7E89 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		01DC7419B1457AFE0B39FCE4 /* Pods-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0BC4B90091388C2D464D5BB8 /* Pods_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		117F6EA936926D9A6359EC66 /* Pods-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		122B388F1EEFCD76006D9716 /* HomePageModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageModuleCell.swift; sourceTree = "<group>"; };
 		124A53C51EE14C3600BE7E89 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		124A53C81EE14C3600BE7E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		124A53CA1EE14C3600BE7E89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		12D3A8351EE7A8800099E5A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				122B388F1EEFCD76006D9716 /* HomePageModuleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				124A53E11EE14C3700BE7E89 /* Frameworks */,
 				124A53E21EE14C3700BE7E89 /* Resources */,
 				B064124C735B70BB91248A8D /* [CP] Copy Pods Resources */,
+				EC2DE902BE5BED32C97563C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -643,7 +647,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		773E163E8AAF3108CAD2C036 /* [CP] Check Pods Manifest.lock */ = {
@@ -658,7 +662,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		96A7F3B63CB48E58C72963D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -673,7 +677,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B064124C735B70BB91248A8D /* [CP] Copy Pods Resources */ = {
@@ -689,6 +693,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2DE902BE5BED32C97563C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE6518D12F865EC88E791FE8 /* [CP] Embed Pods Frameworks */ = {
@@ -718,6 +737,7 @@
 				12FE3A8B1EE54CC3003C391B /* BaseSlideMenuController.swift in Sources */,
 				124A541D1EE15A9000BE7E89 /* BaseTabBarController.swift in Sources */,
 				124A541B1EE15A6400BE7E89 /* BaseCollectionReusableView.swift in Sources */,
+				122B38901EEFCD76006D9716 /* HomePageModuleCell.swift in Sources */,
 				124A54211EE15AA400BE7E89 /* BaseTableViewController.swift in Sources */,
 				124A53CB1EE14C3600BE7E89 /* ViewController.swift in Sources */,
 				124A54251EE15AC600BE7E89 /* BaseNavigationController.swift in Sources */,
