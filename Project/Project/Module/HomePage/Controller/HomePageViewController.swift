@@ -12,7 +12,7 @@ import SnapKit
 class HomePageViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     lazy var testView: AnimatedView = {
-        let testView = AnimatedView()
+        let testView = AnimatedView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         testView.backgroundColor = UIColor.white
         return testView
     }()
@@ -66,14 +66,11 @@ class HomePageViewController: BaseViewController, UITableViewDelegate, UITableVi
         ///测试代码
         
         view.addSubview(testView)
-        testView.snp.makeConstraints { (ConstraintMaker) in
-            ConstraintMaker.centerX.centerY.equalToSuperview()
-            ConstraintMaker.width.height.equalTo(SizeUtail.adjustFloat(float: 100))
-        }
+        testView.center = view.center
         ///测试代码
         
         ///旋转动画
-        rorateAnimation(holdView: testView)
+        //rorateAnimation(holdView: testView)
         
         //startDpLink()
     }
