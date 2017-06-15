@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class HomePageViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -26,24 +25,8 @@ class HomePageViewController: BaseViewController, UITableViewDelegate, UITableVi
         return tableView
     }()
     
-    lazy var timerLink: CADisplayLink = {
-        let dpLink = CADisplayLink(target: self, selector: #selector(HomePageViewController.update))
-        dpLink.frameInterval = 1
-        dpLink.isPaused = true
-        dpLink.add(to: RunLoop.current, forMode: .commonModes)
-        return dpLink
-    }()
-    
     func update(){
         
-    }
-    
-    func startDpLink(){
-        self.timerLink.isPaused = false
-    }
-    
-    func stopDpLink(){
-        self.timerLink.invalidate()
     }
     
     override func viewDidLoad() {
@@ -73,16 +56,6 @@ class HomePageViewController: BaseViewController, UITableViewDelegate, UITableVi
         //rorateAnimation(holdView: testView)
         
         //startDpLink()
-    }
-
-    func rorateAnimation(holdView: UIView){
-        
-        let momAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        momAnimation.fromValue = NSNumber(value: 0)
-        momAnimation.toValue = NSNumber(value: M_PI*2)
-        momAnimation.duration = 10
-        momAnimation.repeatCount = HUGE
-        holdView.layer.add(momAnimation, forKey: "centerLayer")
     }
     
     //MARK: - UITableViewDataSource

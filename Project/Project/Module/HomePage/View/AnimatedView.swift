@@ -10,104 +10,117 @@ import UIKit
 
 class AnimatedView: BaseView, CAAnimationDelegate {
     
-    var baseLayer = CALayer()
-    var baseSize = CGSize(width: 0, height: 0)
-    var animationFlag = 0
+    var gradientLayer: CALayer?
     
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         
-        setup(self.layer, size: CGSize(width: 100, height: 100), colors: [UIColor.red, UIColor.yellow])
+        setupAnimation()
+        
+        perform(#selector(changeLayerWidth), afterDelay: 1)
+        perform(#selector(drawLinePath), afterDelay: 2.5)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(_ layer: CALayer, size: CGSize, colors: [UIColor]) {
+    func setupAnimation() -> () {
         
-        let dotNum: CGFloat = 8
-        let diameter: CGFloat = size.width / 16
-        let duration: CFTimeInterval = 2.8
+        // 动画
+//        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+//        rotateAnimation.fromValue = 0
+//        rotateAnimation.toValue =  Double.pi * 2
+//        rotateAnimation.duration  = 15;
+//        rotateAnimation.autoreverses = false;
+//        rotateAnimation.fillMode = kCAFillModeForwards;
+//        rotateAnimation.repeatCount = MAXFLOAT
         
-        let dot = CALayer()
-        let frame = CGRect(
-            x: (layer.bounds.width - diameter) / 2 + diameter * 2,
-            y: (layer.bounds.height - diameter) / 2,
-            width: diameter,
-            height: diameter
-        )
+        //生成渐变色
+        let gradientLayer = CALayer()
+        gradientLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.gradientLayer = gradientLayer
         
-        baseLayer = layer
-        baseSize = size
+        //左侧渐变色
+        let leftLayer = CAGradientLayer()
+        leftLayer.frame = self.bounds
+        leftLayer.locations = [0.3, 0.9, 1];
+        leftLayer.colors = [UIColor.yellow.cgColor, UIColor.red.cgColor];
+        gradientLayer.addSublayer(leftLayer)
         
-        dot.backgroundColor = colors[0].cgColor
-        dot.cornerRadius = diameter / 2
-        dot.frame = frame
+        let dotLayer = CAShapeLayer()
+        dotLayer.frame = self.bounds
+        dotLayer.fillColor = UIColor.clear.cgColor
+        dotLayer.strokeColor = UIColor.white.cgColor
+        dotLayer.opacity = 1
+        dotLayer.lineCap = kCALineCapRound
+        dotLayer.lineWidth = 1
+        let path = UIBezierPath(arcCenter: self.center,
+                                radius: self.width * 0.5 - 5,
+                                startAngle: 0,
+                                endAngle: CGFloat(Double.pi * 2),
+                                clockwise: true)
+        dotLayer.path = path.cgPath
+        dotLayer.lineDashPattern = [0.5,4]
         
-        let replicatorLayer = CAReplicatorLayer()
-        replicatorLayer.frame = layer.bounds
-        replicatorLayer.instanceCount = Int(dotNum)
-        replicatorLayer.instanceDelay = CFTimeInterval(-1 / dotNum * 0.5)
-        //replicatorLayer.instanceTransform = CATransform3DMakeRotation(CGFloat(2*M_PI) / CGFloat(dotNum), 0, 0, 1.0)
-        
-        //        let angle = (2.0 * M_PI) / Double(replicatorLayer.instanceCount)
-        //        replicatorLayer.instanceTransform = CATransform3DMakeRotation(CGFloat(angle), 0.0, 0.0, 1.0)
-        
-        layer.addSublayer(replicatorLayer)
-        replicatorLayer.addSublayer(dot)
-//
-//        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-//        scaleAnimation.toValue = 0.8
-//        scaleAnimation.duration = duration
-//        scaleAnimation.autoreverses = true
-//        scaleAnimation.repeatCount = .infinity
-//        scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-//        dot.add(scaleAnimation, forKey: "scaleAnimation")
-//
-//        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotationAnimation.toValue = -2.0 * .pi
-//        rotationAnimation.duration = duration
-//        rotationAnimation.repeatCount = .infinity
-        //rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        //        replicatorLayer.addAnimation(rotationAnimation, forKey: "rotationAnimation")
-        //        dot.addAnimation(rotationAnimation, forKey: "rotationAnimation")
-//
-        let moveAnimation = CAKeyframeAnimation(keyPath: "position")
-        moveAnimation.beginTime = 1.0
-        moveAnimation.path = getPath()
-        moveAnimation.duration = duration
-        moveAnimation.repeatCount = .infinity
-        //moveAnimation.timingFunction = CAMediaTimingFunction(controlPoints: 0.785, 0.135, 0.15, 0.86)
-        dot.add(moveAnimation, forKey: "moveAnimation")
-//
-//        layer.transform = CATransform3DMakeRotation(CGFloat(M_PI) / 2, 0, 0, 0)
-//
-//
-//        if colors.count > 1 {
-//
-//            var cgColors : [CGColor] = []
-//            for color in colors {
-//                cgColors.append(color.cgColor)
-//            }
-//
-//            let colorAnimation = CAKeyframeAnimation(keyPath: "backgroundColor")
-//            colorAnimation.values = cgColors
-//            colorAnimation.duration = 3
-//            colorAnimation.repeatCount = .infinity
-//            colorAnimation.autoreverses = true
-//            dot.add(colorAnimation, forKey: "colorAnimation")
-//
-//        }
+        gradientLayer.mask = dotLayer
+        layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        layer.addSublayer(gradientLayer)
+        //layer.add(rotateAnimation, forKey: "rotateAnimation")
     }
     
-    func getPath() -> CGPath {
-        let radius: CGFloat = baseSize.width / 3
-        let center : CGPoint = CGPoint(x: (baseSize.width) / 2, y: (baseSize.height) / 2)
-        let p = CGMutablePath()
-        p.addArc(center: center , radius: radius, startAngle: -CGFloat.pi*2, endAngle: CGFloat.pi*2*3, clockwise: false)
-        return p
+    func changeLayerWidth() -> () {
+        
+        let storkAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        storkAnimation.duration = 8
+        storkAnimation.fromValue = 0
+        storkAnimation.toValue = 1
+        storkAnimation.repeatCount = HUGE
+        
+        let dotLineLayer = CAShapeLayer()
+        dotLineLayer.frame = self.bounds
+        dotLineLayer.fillColor = UIColor.white.cgColor
+        dotLineLayer.strokeColor = UIColor.red.cgColor
+        dotLineLayer.opacity = 1
+        dotLineLayer.lineCap = kCALineCapRound
+        dotLineLayer.lineWidth = 1
+        let path = UIBezierPath(arcCenter: self.center,
+                                radius: self.width * 0.5 - 5,
+                                startAngle: 0,
+                                endAngle: CGFloat(Double.pi * 2),
+                                clockwise: true)
+        dotLineLayer.path = path.cgPath
+        dotLineLayer.lineDashPattern = [2,4]
+        dotLineLayer.add(storkAnimation, forKey: "storkAnimation")
+        dotLineLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        layer.addSublayer(dotLineLayer)
+    }
+    
+    func drawLinePath() -> () {
+        
+        let storkAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        storkAnimation.duration = 6.5
+        storkAnimation.fromValue = 0
+        storkAnimation.toValue = 1
+        storkAnimation.repeatCount = HUGE
+        
+        let lineLayer = CAShapeLayer()
+        lineLayer.frame = self.bounds
+        lineLayer.fillColor = UIColor.white.cgColor
+        lineLayer.strokeColor = UIColor.red.cgColor
+        lineLayer.opacity = 1
+        lineLayer.lineCap = kCALineCapRound
+        lineLayer.lineWidth = 1
+        let path = UIBezierPath(arcCenter: self.center,
+                                radius: self.width * 0.5 - 5,
+                                startAngle: 0,
+                                endAngle: CGFloat(Double.pi * 2),
+                                clockwise: true)
+        lineLayer.path = path.cgPath
+        lineLayer.add(storkAnimation, forKey: "storkAnimation")
+        lineLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        layer.addSublayer(lineLayer)
     }
 }
 
