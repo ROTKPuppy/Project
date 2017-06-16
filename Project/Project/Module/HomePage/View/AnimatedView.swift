@@ -17,9 +17,11 @@ class AnimatedView: BaseView, CAAnimationDelegate {
         super.init(frame: frame)
         
         setupAnimation()
+        changeLayerWidth()
+        drawLinePath()
         
-        perform(#selector(changeLayerWidth), afterDelay: 1)
-        perform(#selector(drawLinePath), afterDelay: 2.5)
+//        perform(#selector(changeLayerWidth), afterDelay: 1)
+//        perform(#selector(drawLinePath), afterDelay: 2.5)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,13 +31,13 @@ class AnimatedView: BaseView, CAAnimationDelegate {
     func setupAnimation() -> () {
         
         // 动画
-//        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-//        rotateAnimation.fromValue = 0
-//        rotateAnimation.toValue =  Double.pi * 2
-//        rotateAnimation.duration  = 15;
-//        rotateAnimation.autoreverses = false;
-//        rotateAnimation.fillMode = kCAFillModeForwards;
-//        rotateAnimation.repeatCount = MAXFLOAT
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotateAnimation.fromValue = 0
+        rotateAnimation.toValue =  Double.pi * 2
+        rotateAnimation.duration  = 15;
+        rotateAnimation.autoreverses = false;
+        rotateAnimation.fillMode = kCAFillModeForwards;
+        rotateAnimation.repeatCount = MAXFLOAT
         
         //生成渐变色
         let gradientLayer = CALayer()
@@ -65,9 +67,9 @@ class AnimatedView: BaseView, CAAnimationDelegate {
         dotLayer.lineDashPattern = [0.5,4]
         
         gradientLayer.mask = dotLayer
+        layer.add(rotateAnimation, forKey: "rotateAnimation")
         layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         layer.addSublayer(gradientLayer)
-        //layer.add(rotateAnimation, forKey: "rotateAnimation")
     }
     
     func changeLayerWidth() -> () {
